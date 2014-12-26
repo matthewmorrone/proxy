@@ -27,19 +27,16 @@ function format(url) {
 	console.log(url);
 	return url;
 }
-function loadpage(url)
-{
+function loadpage(url) {
 	url = format(url);
-	$.post("index.php", {mode: "proxy", url: url}, function(data)
-	{
-		var iframe = document.getElementById('iframe'),
-		    iframedoc = iframe.contentDocument || iframe.contentWindow.document;
-		iframedoc.body.innerHTML = data;
-	}, "text");
+	// $.post("index.php", {mode: "proxy", url: url}, function(data) {
+var iframe = document.getElementById('iframe'),
+	iframedoc = iframe.contentDocument || iframe.contentWindow.document;
+	iframedoc.body.innerHTML = data;
+	// }, "text");
 }
-$(function()
-{
-	// var $_GET = new Url(window.location.href).queryPairs;
+$(function() {
+	var $_GET = new Url(window.location.href).queryPairs;
 
 	var a = document.createElement("a");
 	a.href = window.location.href;
